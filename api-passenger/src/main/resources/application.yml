@@ -1,0 +1,35 @@
+server:
+  port: 8080
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7001:7001/eureka/
+    register-with-eureka: false
+spring:
+  application:
+    name: api-passenger
+#ribbon:
+    #链接超时时间
+    #ConnectiTimeout: 60000
+    #最大超时时间
+    #ReadTimeout: 6000
+    #最大重试次数 不包含首次调用
+    #MaxAutoRetries: 1
+    #其他节点的最大重试次数  包含首次调用
+    #MaxAutoRetriesNextServer: 1
+    #是否所有操作都重试
+    #OkToRetryOnAllOperations: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+#配置线程隔离的离粒度 THREAD：线程隔离   SEMAPHORE:信号量隔离
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: SEMAPHORE
+
+
