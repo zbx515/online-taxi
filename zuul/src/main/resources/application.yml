@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: zuul-test
+server:
+  port: 80
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka7001:7001/eureka/
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"

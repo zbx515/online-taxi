@@ -12,6 +12,7 @@
         <module name="internal-common" />
         <module name="service-sms" />
         <module name="service-verification-code" />
+        <module name="zuul" />
       </profile>
     </annotationProcessing>
   </component>

@@ -4,7 +4,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://eureka7001:7001/eureka/
-    register-with-eureka: false
+    register-with-eureka: true
 spring:
   application:
     name: api-passenger
