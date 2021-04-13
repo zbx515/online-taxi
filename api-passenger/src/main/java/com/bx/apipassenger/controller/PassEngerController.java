@@ -55,4 +55,11 @@ public class PassEngerController {
     public String test(@RequestParam("name") String name){
         return restHystrixService.get(name);
     }
+
+
+    @RequestMapping("/test")
+    public String testsms(){
+        String result = restTemplate.getForObject(SERVICE_SMS_URL + "/sendsms/test", String.class);
+        return result;
+    }
 }
