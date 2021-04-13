@@ -1,5 +1,3 @@
-server:
-  port: 8082
 eureka:
   client:
     serviceUrl:
@@ -7,3 +5,24 @@ eureka:
 spring:
   application:
     name: service-sms
+
+
+---
+spring:
+     profiles: v1
+server:
+  port: 8082
+
+eureka:
+  instance:
+    metadata-map:
+      version: v1
+---
+spring:
+  profiles: v2
+server:
+  port: 8092
+eureka:
+  instance:
+    metadata-map:
+      version: v2
