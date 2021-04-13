@@ -6,16 +6,16 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/online-taxi-three?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: root
-      password: root
-      dbcp2:
-        initial-size: 5
-        min-idle: 5
-        max-total: 5
-        max-wait-millis: 200
-        validation-query: SELECT 1
-        test-while-idle: true
-        test-on-borrow: false
-        test-on-return: false
+    password: 545117953
+    dbcp2:
+      initial-size: 5
+      min-idle: 5
+      max-total: 5
+      max-wait-millis: 200
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
 server:
   port: 80
 eureka:
