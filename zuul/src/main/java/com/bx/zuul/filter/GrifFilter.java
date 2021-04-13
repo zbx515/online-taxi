@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 基于zuul的灰度发布
+ */
 @Component
 public class GrifFilter extends ZuulFilter {
     @Override
