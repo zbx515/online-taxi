@@ -30,3 +30,6 @@ management:
     web:
       exposure:
         include: "*"
+zuul:
+  #加此注解可在转发的时候将header传过去
+  sensitive-headers:
