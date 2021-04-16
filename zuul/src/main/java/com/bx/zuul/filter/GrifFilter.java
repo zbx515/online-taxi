@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 基于zuul的灰度发布
  */
-@Component
+//@Component
 public class GrifFilter extends ZuulFilter {
     @Override
     public String filterType() {

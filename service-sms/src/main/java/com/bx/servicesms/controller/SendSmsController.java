@@ -31,4 +31,9 @@ public class SendSmsController {
     public String test(){
         return "service-sms: "+port;
     }
+
+    @RequestMapping("/test4")
+    public String test4(){
+        return "service-sms/test4: "+port;
+    }
 }
