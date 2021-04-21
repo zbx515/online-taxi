@@ -12,7 +12,7 @@ import java.io.PrintWriter;
  * 基于网关的限流，其思想为  拿到令牌的继续执行  用过滤器实现 似于多线程中的信号量semaphore
  * 服务与服务之间的限流 也是这种思想 用Filter实现
  */
-@Component
+//@Component
 public class LimitFilter implements Filter {
 
     private static RateLimiter  LIMIT = RateLimiter.create(1);
