@@ -45,6 +45,9 @@ public class RouteFilter extends ZuulFilter {
             //设置转发的地址
             currentContext.set(FilterConstants.REQUEST_URI_KEY,"/sendsms/test4");
         }
+        //不太合适待验证 设置为false则不走后边的过滤器   只对route过滤器生效
+        //currentContext.setSendZuulResponse(false);
+
         return null;
     }
 }

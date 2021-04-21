@@ -33,3 +33,5 @@ management:
 zuul:
   #加此注解可在转发的时候将header传过去
   sensitive-headers:
+#logging:
+ # level: debug
