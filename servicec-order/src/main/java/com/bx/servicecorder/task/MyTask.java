@@ -34,11 +34,12 @@ public class MyTask {
         List<OrderEvent> orderEvents = orderEventDao.selectByOrderType(0);
         for (int i = 0; i <orderEvents.size() ; i++) {
             OrderEvent orderEvent = orderEvents.get(i);
-            //将消息写入队列
-            jmsMessagingTemplate.convertAndSend(queue, JSON.toJSONString(orderEvent));
             //修改数据状态
             orderEventDao.updateById(orderEvent.getId());
             System.out.println("修改完成");
+            //将消息写入队列
+            jmsMessagingTemplate.convertAndSend(queue, JSON.toJSONString(orderEvent));
+
         }
     }
 }
