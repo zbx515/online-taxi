@@ -13,6 +13,7 @@
         <module name="service-passenger-user" />
         <module name="service-sms" />
         <module name="service-verification-code" />
+        <module name="servicec-order" />
         <module name="zuul" />
       </profile>
     </annotationProcessing>
