@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bx.servicecorder.dao.OrderEventDao">
+  <resultMap id="BaseResultMap" type="com.bx.servicecorder.entity.OrderEvent">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="eventid" jdbcType="INTEGER" property="eventid" />
+    <result column="ordertype" jdbcType="TINYINT" property="ordertype" />
+    <result column="context" jdbcType="VARCHAR" property="context" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, eventid, ordertype, context, createtime, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from order_event
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from order_event
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.bx.servicecorder.entity.OrderEvent" useGeneratedKeys="true">
+    insert into order_event (eventid, ordertype, context, 
+      createtime, updatetime)
+    values (#{eventid,jdbcType=INTEGER}, #{ordertype,jdbcType=TINYINT}, #{context,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.bx.servicecorder.entity.OrderEvent" useGeneratedKeys="true">
+    insert into order_event
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eventid != null">
+        eventid,
+      </if>
+      <if test="ordertype != null">
+        ordertype,
+      </if>
+      <if test="context != null">
+        context,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eventid != null">
+        #{eventid,jdbcType=INTEGER},
+      </if>
+      <if test="ordertype != null">
+        #{ordertype,jdbcType=TINYINT},
+      </if>
+      <if test="context != null">
+        #{context,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bx.servicecorder.entity.OrderEvent">
+    update order_event
+    <set>
+      <if test="eventid != null">
+        eventid = #{eventid,jdbcType=INTEGER},
+      </if>
+      <if test="ordertype != null">
+        ordertype = #{ordertype,jdbcType=TINYINT},
+      </if>
+      <if test="context != null">
+        context = #{context,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bx.servicecorder.entity.OrderEvent">
+    update order_event
+    set eventid = #{eventid,jdbcType=INTEGER},
+      ordertype = #{ordertype,jdbcType=TINYINT},
+      context = #{context,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByOrderType" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from order_event
+    where ordertype = #{ordertype,jdbcType=INTEGER}
+  </select>
+
+  <update id="updateById" parameterType="java.lang.Integer">
+    update order_event
+    set
+      ordertype = 1
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+</mapper>
