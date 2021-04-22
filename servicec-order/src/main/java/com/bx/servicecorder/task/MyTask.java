@@ -28,7 +28,7 @@ public class MyTask {
     JmsMessagingTemplate jmsMessagingTemplate;
 
     @Scheduled(cron = "0/5 * * * * ?")
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public void task(){
         System.out.println("我是定时任务...");
         List<OrderEvent> orderEvents = orderEventDao.selectByOrderType(0);
