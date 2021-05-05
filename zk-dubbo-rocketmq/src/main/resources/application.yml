@@ -1,0 +1,29 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: zk-dubbo-mq
+  dubbo:
+    server: true
+    registry:
+      address: zookeeper://127.0.0.1:2181
+      #;zookeeper://127.0.0.1:2182;zookeeper://127.0.0.1:2183;
+    protocol:
+      name: dubbo
+      port: 20880
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/online-taxi-three?characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 545117953
+    dbcp2:
+      initial-size: 5
+      min-idle: 5
+      max-total: 5
+      max-wait-millis: 200
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+#‘ˆº”rockermqµƒ≈‰÷√
