@@ -5,8 +5,7 @@ spring:
     name: zk-dubbo-mq
   dubbo:
     server: true
-    registry:
-      address: zookeeper://127.0.0.1:2181
+    registry: zookeeper://127.0.0.1:2181
       #;zookeeper://127.0.0.1:2182;zookeeper://127.0.0.1:2183;
     protocol:
       name: dubbo
