@@ -15,6 +15,7 @@
         <option value="$PROJECT_DIR$/servicec-order/pom.xml" />
         <option value="$PROJECT_DIR$/service-pay/pom.xml" />
         <option value="$PROJECT_DIR$/zk-dubbo-rocketmq/pom.xml" />
+        <option value="$PROJECT_DIR$/zk-dubbo-cusomer/pom.xml" />
       </list>
     </option>
   </component>

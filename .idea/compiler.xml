@@ -15,6 +15,7 @@
         <module name="service-sms" />
         <module name="service-verification-code" />
         <module name="servicec-order" />
+        <module name="zk-dubbo-cusomer" />
         <module name="zk-dubbo-rocketmq" />
         <module name="zuul" />
       </profile>
