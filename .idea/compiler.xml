@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-passenger" />
         <module name="cloud-eureka" />
+        <module name="getway" />
         <module name="internal-common" />
         <module name="service-passenger-user" />
         <module name="service-pay" />
