@@ -1,5 +1,6 @@
 package com.bx.apipassenger.controller;
 
+import com.bx.apipassenger.annotation.CheckToken;
 import com.bx.apipassenger.service.RestHystrixService;
 import com.bx.internalcommon.dto.ResponseResult;
 import com.bx.internalcommon.dto.verifservice.VerifCodeEntity;
@@ -61,5 +62,12 @@ public class PassEngerController {
     public String testsms(){
         String result = restTemplate.getForObject(SERVICE_SMS_URL + "/sendsms/test", String.class);
         return result;
+    }
+
+
+    @RequestMapping("/check")
+    @CheckToken
+    public String checkToken(){
+        return "hahaha";
     }
 }

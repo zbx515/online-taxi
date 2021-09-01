@@ -10,4 +10,7 @@ public class MainController {
     public String getWay(){
         return null;
     }
+
+
+
 }

@@ -1,0 +1,13 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: testroute
+        uri: http://localhost:8080
+        predicates:
+          - Path=/getway/**
+        filters:
+        - StripPrefix=1
+
+server:
+  port: 80
